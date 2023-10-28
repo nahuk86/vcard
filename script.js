@@ -6,7 +6,7 @@ document.getElementById('generar').addEventListener('click', function() {
     const telefono = document.getElementById('telefono').value;
     const direccion = document.getElementById('direccion').value;
     const linkedin = document.getElementById('linkedin').value;
-    
+
     // Crear el contenido de la vCard
     const vCardData = `BEGIN:VCARD
 VERSION:3.0
@@ -21,12 +21,17 @@ END:VCARD`;
     // Crear un Blob con los datos
     const blob = new Blob([vCardData], { type: 'text/vcard' });
 
-    // Crear un enlace de descarga
+    // Crear una URL de datos
     const url = URL.createObjectURL(blob);
-    const downloadLink = document.getElementById('downloadLink');
-    downloadLink.href = url;
-    downloadLink.download = `${nombre}_${apellido}.vcf`;
 
-    // Simular un clic en el enlace de descarga para descargar automáticamente
-    downloadLink.click();
+    // Crear un enlace invisible y hacer clic en él para descargar automáticamente
+    const a = document.createElement('a');
+    a.style.display = 'none';
+    a.href = url;
+    a.download = `${nombre}_${apellido}.vcf`;
+    document.body.appendChild(a);
+    a.click();
+    
+    // Liberar la URL de datos
+    URL.revokeObjectURL(url);
 });
