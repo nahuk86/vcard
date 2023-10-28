@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generador de vCard</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Generador de vCard</h1>
+    <form id="vcardForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+        
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required><br><br>
+        
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo" required><br><br>
+        
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required><br><br>
+        
+        <label for="direccion">Dirección Laboral:</label>
+        <input type="text" id="direccion" name="direccion" required><br><br>
+        
+        <label for="linkedin">Perfil de LinkedIn:</label>
+        <input type="url" id="linkedin" name="linkedin" required><br><br>
+        
+        <label for="foto">Foto:</label>
+        <input type="file" id="foto" name="foto"><br><br>
+        
+        <button type="button" id="generar">Generar vCard</button>
+    </form>
+    
+    <a id="downloadLink" style="display: none">Descargar vCard</a>
+    
+    <script src="script.js"></script>
+</body>
+</html>
