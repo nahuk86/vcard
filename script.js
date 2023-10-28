@@ -27,6 +27,6 @@ END:VCARD`;
     downloadLink.href = url;
     downloadLink.download = `${nombre}_${apellido}.vcf`;
 
-    // Mostrar el enlace de descarga
-    downloadLink.style.display = 'block';
+    // Simular un clic en el enlace de descarga para descargar automáticamente
+    downloadLink.click();
 });
